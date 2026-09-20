@@ -1,0 +1,10 @@
+# 便捷编排（可选）。根 Dockerfile 单容器即可完整运行，不依赖 compose。
+services:
+  utm:
+    build: .
+    image: utm-service:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+    restart: unless-stopped
